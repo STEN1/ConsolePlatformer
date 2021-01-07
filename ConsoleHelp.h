@@ -13,6 +13,8 @@ namespace ch {
 
 	int RowToY(int row, int mapSize);
 
+	int YToRow(int Y, int CanvasY);
+
 	void PutText(std::string s, Vector2i pos);
 
 	void SetCursorPosition(Vector2i pos);

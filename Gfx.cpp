@@ -15,7 +15,7 @@ void Gfx::DrawObject(GameObject* Object)
 
 	std::string S{ " " };
 	S[0] = Object->GetGfx();
-	ch::PutText(S, { IntLocation.x, ch::RowToY(IntLocation.y, CanvasSize.y) });
+	ch::PutText(S, { IntLocation.x, ch::YToRow(IntLocation.y, CanvasSize.y) });
 }
 
 Vector2i Gfx::CanvasSize{ 56, 28 };
