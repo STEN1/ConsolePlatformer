@@ -142,12 +142,14 @@
     <ClCompile Include="ConsoleHelp.cpp" />
     <ClCompile Include="ConsolePlatformer.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleHelp.h" />
     <ClInclude Include="ConsolePlatformer.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="PlayerObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
