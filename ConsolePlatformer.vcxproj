@@ -142,6 +142,7 @@
     <ClCompile Include="ConsoleHelp.cpp" />
     <ClCompile Include="ConsolePlatformer.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Gfx.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="ConsoleHelp.h" />
     <ClInclude Include="ConsolePlatformer.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Gfx.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="PlayerObject.h" />
   </ItemGroup>

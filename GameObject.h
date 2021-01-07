@@ -9,9 +9,13 @@ public:
 
 	Vector2f* GetLocation();
 	void SetLocation(Vector2f Location);
+	
+	char GetGfx();
 
 	virtual void Update(float DeltaTime);
 protected:
 	Vector2f Location;
+	bool DrawObject;
+	char GfxChar;
 };
 

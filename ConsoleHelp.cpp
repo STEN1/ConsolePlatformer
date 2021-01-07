@@ -3,16 +3,21 @@
 
 namespace ch {
 
-	int ch::RowToY(int row, int mapSize)
+	int RowToY(int row, int mapSize)
 	{
 		return mapSize - (row + 1);
 	}
 
-	void SetCursorPosition(Pos pos)
+	int YToRow(int Y, int CanvasY)
+	{
+		return CanvasY - Y;
+	}
+
+	void SetCursorPosition(Vector2i pos)
 	{
 		static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		std::cout.flush();
-		COORD coord = { (SHORT)pos.col, (SHORT)pos.row };
+		COORD coord = { (SHORT)pos.x, (SHORT)pos.y };
 		SetConsoleCursorPosition(hOut, coord);
 	}
 
@@ -27,7 +32,7 @@ namespace ch {
 		SetConsoleCursorInfo(out, &cursorInfo);
 	}
 
-	void PutText(std::string s, Pos pos)
+	void PutText(std::string s, Vector2i pos)
 	{
 		SetCursorPosition(pos);
 		std::cout << s;

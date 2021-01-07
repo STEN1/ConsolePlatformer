@@ -3,6 +3,7 @@
 
 #include "PlayerObject.h"
 #include "Input.h"
+#include "Gfx.h"
 
 int main()
 {
@@ -12,17 +13,26 @@ int main()
 
 	while (true)
 	{
+		system("cls");
+
 		Input::GetInput();
 
-		std::cout << std::boolalpha << "Key W: " << Input::W << std::endl;
-		std::cout << std::boolalpha << "Key A: " << Input::A << std::endl;
-		std::cout << std::boolalpha << "Key S: " << Input::S << std::endl;
-		std::cout << std::boolalpha << "Key D: " << Input::D << std::endl;
-		std::cout << std::boolalpha << "Key Space: " << Input::Space << std::endl;
+		if (Input::W) std::cout << std::boolalpha << "Key W: " << std::endl;
+		if (Input::A) std::cout << std::boolalpha << "Key A: " << std::endl;
+		if (Input::S) std::cout << std::boolalpha << "Key S: " << std::endl;
+		if (Input::D) std::cout << std::boolalpha << "Key D: " << std::endl;
+		if (Input::Space) std::cout << std::boolalpha << "Key Space: " << std::endl;
+		std::cout << Gfx::CanvasSize.x << " " << Gfx::CanvasSize.y << std::endl;
 
 		for (auto& Object : Objects)
 		{
-			Object->Update(500.f);
+			Object->Update(100.f);
 		}
+
+		for (auto& Object : Objects)
+		{
+			Gfx::DrawObject(Object);
+		}
+
 	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "ConsolePlatformer.h"
 
 struct Pos
 {
@@ -12,9 +13,9 @@ namespace ch {
 
 	int RowToY(int row, int mapSize);
 
-	void PutText(std::string s, Pos pos);
+	void PutText(std::string s, Vector2i pos);
 
-	void SetCursorPosition(Pos pos);
+	void SetCursorPosition(Vector2i pos);
 
 	void ShowConsoleCursor(bool showFlag);
 
