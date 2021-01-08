@@ -8,6 +8,7 @@ public:
 	PlayerObject();
 
 	virtual void Update(float DeltaTime) override;
+	virtual void Start() override;
 
 	void Movement();
 };

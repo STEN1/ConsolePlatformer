@@ -144,6 +144,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Gfx.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Gfx.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="PlayerObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
