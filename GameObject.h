@@ -27,6 +27,9 @@ public:
 	virtual void Update(float DeltaTime);
 	virtual void Start();
 
+	virtual void TouchFloor();
+	virtual void TouchWall();
+
 	int GetObjectID();
 protected:
 	int ObjectID;

@@ -50,6 +50,14 @@ void GameObject::Start()
 {
 }
 
+void GameObject::TouchFloor()
+{
+}
+
+void GameObject::TouchWall()
+{
+}
+
 int GameObject::GetObjectID()
 {
 	return ObjectID;

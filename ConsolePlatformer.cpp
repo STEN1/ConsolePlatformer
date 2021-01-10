@@ -40,13 +40,13 @@ int main()
 
 		// DebugLog
 		ch::SetCursorPosition({ 0, 0 });
-		std::cout << std::boolalpha << "Key W: " << Input::W << std::endl;
-		std::cout << std::boolalpha << "Key A: " << Input::A << std::endl;
-		std::cout << std::boolalpha << "Key S: " << Input::S << std::endl;
-		std::cout << std::boolalpha << "Key D: " << Input::D << std::endl;
-		std::cout << std::boolalpha << "Key Space: " << Input::Space << std::endl;
-		std::cout << Objects.at(0)->GetXSpeed() << " " << Objects.at(0)->GetYSpeed() << std::endl;
-		std::cout << Objects.at(0)->GetLocation().x << " " << Objects.at(0)->GetLocation().y << std::endl;
+		std::cout << std::boolalpha << "Key W: " << Input::W << "      " << std::endl;
+		std::cout << std::boolalpha << "Key A: " << Input::A << "      " << std::endl;
+		std::cout << std::boolalpha << "Key S: " << Input::S << "      " << std::endl;
+		std::cout << std::boolalpha << "Key D: " << Input::D << "      " << std::endl;
+		std::cout << std::boolalpha << "Key Space: " << Input::Space << "      " << std::endl;
+		std::cout << Objects.at(0)->GetXSpeed() << " " << Objects.at(0)->GetYSpeed() << "      " << std::endl;
+		std::cout << Objects.at(0)->GetLocation().x << " " << Objects.at(0)->GetLocation().y << "      " << std::endl;
 
 		// Run main logic
 		for (auto& Object : Objects)
@@ -57,6 +57,7 @@ int main()
 		// Physics?? :)
 		for (auto& Object : Objects)
 		{
+			Physics::GravityToMovable(Object, DeltaTime);
 			Physics::RestrictMovableToCanvas(Object, Objects);
 			Physics::ResolveStaticMovable(Object, Objects);
 		}
