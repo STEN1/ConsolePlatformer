@@ -16,8 +16,11 @@ int main()
 {
 	ch::ShowConsoleCursor(false);
 	std::vector<GameObject*> Objects;
-	Objects.push_back(new GameObject);
 	Objects.push_back(new PlayerObject);
+	Objects.push_back(new GameObject({ 12.f, 12.f }));
+	Objects.push_back(new GameObject({ 13.f, 12.f }));
+	Objects.push_back(new GameObject({ 14.f, 12.f }));
+	Objects.push_back(new GameObject({ 15.f, 12.f }));
 
 	for (auto& Object : Objects)
 	{
@@ -25,11 +28,12 @@ int main()
 	}
 
 	Gfx::DrawBoarder();
-
+	int DeltaTimeMilliseconds = 25;
+	float DeltaTime = (float)DeltaTimeMilliseconds / 1000.f;
 	while (true)
 	{
 		// Timing
-		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		std::this_thread::sleep_for(std::chrono::milliseconds(DeltaTimeMilliseconds));
 		
 		// Input
 		Input::GetInput();
@@ -41,18 +45,20 @@ int main()
 		std::cout << std::boolalpha << "Key S: " << Input::S << std::endl;
 		std::cout << std::boolalpha << "Key D: " << Input::D << std::endl;
 		std::cout << std::boolalpha << "Key Space: " << Input::Space << std::endl;
-		std::cout << Gfx::CanvasSize.x << " " << Gfx::CanvasSize.y << std::endl;
+		std::cout << Objects.at(0)->GetXSpeed() << " " << Objects.at(0)->GetYSpeed() << std::endl;
+		std::cout << Objects.at(0)->GetLocation().x << " " << Objects.at(0)->GetLocation().y << std::endl;
 
 		// Run main logic
 		for (auto& Object : Objects)
 		{
-			Object->Update(100.f);
+			Object->Update(DeltaTime);
 		}
 
 		// Physics?? :)
 		for (auto& Object : Objects)
 		{
-			Physics::Resolve(Object, Objects);
+			Physics::RestrictMovableToCanvas(Object, Objects);
+			Physics::ResolveStaticMovable(Object, Objects);
 		}
 
 		// Draw the screen

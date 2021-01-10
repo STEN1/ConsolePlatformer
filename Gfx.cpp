@@ -11,9 +11,14 @@ void Gfx::DrawObject(GameObject* Object)
 	if (!Object->DrawObject) return;
 	Vector2i NewCanvasLocation;
 	
+	float xDecimal = Object->Location.x - (int)Object->Location.x;
+	float yDecimal = Object->Location.y - (int)Object->Location.y;
 
 	NewCanvasLocation.x = (int)Object->Location.x;
 	NewCanvasLocation.y = (int)Object->Location.y;
+
+	if (xDecimal > 0.5f) NewCanvasLocation.x += 1.f;
+	if (yDecimal > 0.5f) NewCanvasLocation.y += 1.f;
 
 	std::string S{ " " };
 	S[0] = Object->GfxChar;

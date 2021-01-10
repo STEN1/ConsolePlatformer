@@ -5,8 +5,9 @@
 class Physics
 {
 public:
-	static void Resolve(GameObject* Object, std::vector<GameObject*> Objects);
-
+	static void RestrictMovableToCanvas(GameObject* Object, std::vector<GameObject*> Objects);
+	static void ResolveStaticMovable(GameObject* Object, std::vector<GameObject*> Objects);
+	
 
 };
 

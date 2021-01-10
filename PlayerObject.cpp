@@ -17,10 +17,10 @@ PlayerObject::PlayerObject()
 
 void PlayerObject::Movement()
 {
-	if (Input::W) Location.y += 2;
-	if (Input::A) Location.x -= 3;
-	if (Input::S) Location.y -= 2;
-	if (Input::D) Location.x += 3;
+	if (Input::W) Location.y += 0.1f;
+	if (Input::A) Location.x -= 0.2f;
+	if (Input::S) Location.y -= 0.1f;
+	if (Input::D) Location.x += 0.2f;
 }
 
 void PlayerObject::Update(float DeltaTime)

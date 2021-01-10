@@ -14,6 +14,17 @@ GameObject::GameObject()
 	ObjectID = ConsolePlatformer::GetUniqueID();
 }
 
+GameObject::GameObject(Vector2f Location)
+{
+	DrawObject = true;
+	GfxChar = '#';
+	this->Location = Location;
+	CanvasLocation = { (int)Location.x, (int)Location.y };
+	ObjectPhysicsType = PhysicsType::Static;
+	ObjectID = ConsolePlatformer::GetUniqueID();
+
+}
+
 Vector2f GameObject::GetLocation()
 {
 	return Location;
