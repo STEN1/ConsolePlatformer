@@ -9,6 +9,7 @@
 #include "Physics.h"
 #include "ConsoleHelp.h"
 #include "ConsolePlatformer.h"
+#include "LevelLoader.h"
 
 int ConsolePlatformer::IDcounter = 0;
 
@@ -17,10 +18,8 @@ int main()
 	ch::ShowConsoleCursor(false);
 	std::vector<GameObject*> Objects;
 	Objects.push_back(new PlayerObject);
-	Objects.push_back(new GameObject({ 12.f, 12.f }));
-	Objects.push_back(new GameObject({ 13.f, 12.f }));
-	Objects.push_back(new GameObject({ 14.f, 12.f }));
-	Objects.push_back(new GameObject({ 15.f, 12.f }));
+
+	LoadLevel(Objects, "Map.txt");
 
 	for (auto& Object : Objects)
 	{

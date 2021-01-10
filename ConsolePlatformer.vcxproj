@@ -144,6 +144,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Gfx.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
   </ItemGroup>
@@ -153,8 +154,12 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Gfx.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="PlayerObject.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Map.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
